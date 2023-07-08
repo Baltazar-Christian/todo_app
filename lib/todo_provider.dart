@@ -44,7 +44,7 @@ class TodoProvider extends ChangeNotifier {
         throw Exception('Failed to fetch todos');
       }
     } catch (error) {
-      throw Exception('Failed to fetch todos');
+      throw Exception('Failed to fetch todos: $error');
     }
     notifyListeners();
   }

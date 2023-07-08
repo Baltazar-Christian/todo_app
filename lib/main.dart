@@ -33,7 +33,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<TodoProvider>(context, listen: false).fetchTodos();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      Provider.of<TodoProvider>(context, listen: false).fetchTodos();
+    });
   }
 
   @override
